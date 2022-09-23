@@ -1,5 +1,7 @@
 
 
+
+
 #include<iostream>
 
 #include<stdio.h>
@@ -24,13 +26,13 @@ void intro() {
 }
 
 void head() {
-	cout<<"같같같같같같같같같같같같같같같같같같같같같\n";
-	cout<<"같같같같같같같같같같같같같같같같같같같\n";
+	cout<<"째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째\n";
+	cout<<"째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째\n";
 	cout<<"\t\t\t\t\t\t\t\t\t       ?\n";
 	cout<<"\\       XYZ Group of Hotels\t\t\t       ";
 	cout<<"\t\t\t\t\t\t\t\t\t       ?";
-	cout<<"같같같같같같같같같같같같같같같같같같같같같";
-	cout<<"같같같같같같같같같같같같같같같같같같같";
+	cout<<"째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째";
+	cout<<"째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째째";
 }
 void time() {
 	int i=0;
@@ -102,7 +104,7 @@ void hotel::add() {
 
 	head();
 	int r,flag;
-	ofstream fout("Record.dat",ios::app);
+	ofstream fout("E:\ishi.txt",ios::app);
 	cout<<"\n Enter Customer Details";
 	cout<<"\n ----------------------";
 	cout<<"\n\n Room no: ";
@@ -132,7 +134,7 @@ void hotel::add() {
 void hotel::display() {
 
 	head();
-	ifstream fin("Record.dat",ios::in);
+	ifstream fin("E:\ishi.txt",ios::in);
 	int r,flag;
 	cout<<"\n Enter room no: ";
 	cin>>r;
@@ -161,7 +163,7 @@ void hotel::display() {
 void hotel::rooms() {
 
 	head();
-	ifstream fin("Record.dat",ios::in);
+	ifstream fin("E:\ishi.txt",ios::in);
 	cout<<"\n\t\t\t    List Of Rooms Allotted";
 	cout<<"\n\t\t\t    ----------------------";
 	while(!fin.eof()) {
@@ -201,7 +203,7 @@ void hotel::edit() {
 }
 int hotel::check(int r) {
 	int flag=0;
-	ifstream fin("Record.dat",ios::in);
+	ifstream fin("E:\ishi.txt",ios::in);
 	while(!fin.eof()) {
 		fin.read((char*)this,sizeof(hotel));
 		if(room_no==r) {
@@ -216,7 +218,7 @@ void hotel::modify(int r) {
 	
 	head();
 	long pos,flag=0;
-	fstream file("Record.dat",ios::in|ios::out|ios::binary);
+	fstream file("E:\ishi.txt",ios::in|ios::out|ios::binary);
 	while(!file.eof()) {
 		pos=file.tellg();
 		file.read((char*)this,sizeof(hotel));
